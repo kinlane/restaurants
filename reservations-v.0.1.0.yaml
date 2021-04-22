@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  version: v0.1.0
+  title: Reservation
+  description: 'This is the API for managing reservations at the restaurant.'
+servers:
+  - url: '{{baseUrl}}'
+paths:
+  /reservation:
+    get:
+      summary: Reservation
+      operationId: getReservations
+      tags:
+        - Reservation
+      responses:
+        '200':
+          description: Reservation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReservationListing'
+    post:
+      summary: Reservation
+      operationId: addReservation
+      tags:
+        - Reservation
+      requestBody:
+        description: Reservation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'          
+      responses:
+        '201':
+          description: Reservation       
+  /reservation/{reservationId}:
+    get:
+      summary: Reservation
+      operationId: getReservation
+      parameters:
+        - name: reservationId
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string        
+      tags:
+        - Reservation
+      responses:
+        '200':
+          description: Reservation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReservationListing'
+    put:
+      summary: Reservation
+      operationId: Reservation
+      parameters:
+        - name: reservationId
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string        
+      tags:
+        - Reservation
+      requestBody:
+        description: Reservation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'          
+      responses:
+        '204':
+          description: Reservation     
+    delete:
+      summary: Reservation
+      operationId: deleteReservation
+      parameters:
+        - name: reservationId
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string        
+      tags:
+        - Reservation        
+      responses:
+        '204':
+          description: Reservation                              
+components:
+  schemas:
+    ReservationListing:
+      type: array
+      items:
+        $ref: '#/components/schemas/Reservation'
+    Reservation:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        underName:
+          description: The person or organization the reservation or ticket is for.
+          type: string
+        reservationStatus:
+          description: The current status of the reservation.
+          type: object
+          format: reservationStatus
+        bookingTime:
+          description: The date and time the reservation was booked.
+          type: object
+          format: bookingTime
+        reservationId:
+          description: A unique identifier for the reservation.
+          type: string
+        modifiedTime:
+          description: The date and time the reservation was modified.
+          type: object
+          format: modifiedTime
+        totalPrice:
+          description: 'The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode ''DIGIT ZERO'' (U+0030) to ''DIGIT NINE'' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use ''.'' (Unicode ''FULL STOP'' (U+002E)) rather than '','' to indicate a decimal point. Avoid using these symbols as a readability separator.'
+          type: string
+        reservationFor:
+          description: 'The thing -- flight, event, restaurant,etc. being reserved.'
+          type: object
+          format: reservationFor
