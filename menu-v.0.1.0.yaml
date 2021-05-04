@@ -8,10 +8,10 @@ servers:
 paths:
   /menu:
     get:
-      summary: Menu
+      summary: Menud
       operationId: getMenus
       tags:
-        - Menu
+        - Menus
       responses:
         '200':
           description: Menu
