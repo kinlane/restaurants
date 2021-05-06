@@ -24,10 +24,10 @@ jobs:
         with:
           args: zip -qq -r ./bundle.zip ./
       - name: default deploy
-        uses: kinlane/lambda-action@master
+        uses: kinlane/restaurants@main
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-1
           function_name: my-function
-          zip_file: bundle.zip
+          zip_file: lambdas/add_item.zip
