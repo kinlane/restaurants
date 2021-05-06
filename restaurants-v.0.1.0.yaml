@@ -8,7 +8,7 @@ servers:
 paths:
   /restaurants:
     get:
-      summary: Restaurant
+      summary: Restaurants
       operationId: getRestaurants
       tags:
         - Restaurant
