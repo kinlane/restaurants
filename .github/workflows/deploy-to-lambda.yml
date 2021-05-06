@@ -8,7 +8,7 @@ jobs:
         node-version: [12.x]
     runs-on: ubuntu-latest
     steps:
-      - uses: kinlane/add-item
+      - uses: kinlane/add-item@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -20,7 +20,7 @@ jobs:
         env:
           CI: true
       - name: zip
-        uses: kinlane/add-item
+        uses: kinlane/add-item@v1
         with:
           args: zip -qq -r ./bundle.zip ./
       - name: default deploy
