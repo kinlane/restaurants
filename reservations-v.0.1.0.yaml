@@ -29,7 +29,21 @@ paths:
         content:
           application/json:
             schema:
+              $ref: '#/components/schemas/Reservation'   
+    put:
+      summary: Reservation
+      operationId: addReservation
+      tags:
+        - Reservation
+      requestBody:
+        description: Reservation
+        content:
+          application/json:
+            schema:
               $ref: '#/components/schemas/Reservation'          
+      responses:
+        '201':
+          description: Reservation                       
       responses:
         '201':
           description: Reservation       
