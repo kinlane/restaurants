@@ -113,7 +113,20 @@ paths:
         - Menu
       responses:
         '204':
-          description: Menu                                           
+          description: Menu    
+  /menu/changes:
+    get:
+      summary: Menud
+      operationId: getMenus
+      tags:
+        - Menus
+      responses:
+        '200':
+          description: Menu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuListing'                                                 
 components:
   schemas:
     MenuListing:
