@@ -20,7 +20,7 @@ jobs:
         env:
           CI: true
       - name: zip
-        uses: kinlane/add-item@v1
+        uses: kinlane/add-item
         with:
           args: zip -qq -r ./bundle.zip ./
       - name: default deploy
