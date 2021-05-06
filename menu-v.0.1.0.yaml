@@ -37,6 +37,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Menu'   
+    put:
+      summary: Menu
+      operationId: addMenu
+      tags:
+        - Menu
+      requestBody:
+        description: Menu
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'        
+      responses:
+        '201':
+          description: Menu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Menu'                 
   /menu/{menuId}:
     get:
       summary: Menu
@@ -113,20 +131,7 @@ paths:
         - Menu
       responses:
         '204':
-          description: Menu    
-  /menu/changes:
-    get:
-      summary: Menud
-      operationId: getMenus
-      tags:
-        - Menus
-      responses:
-        '200':
-          description: Menu
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MenuListing'                                                 
+          description: Menu                                                  
 components:
   schemas:
     MenuListing:
