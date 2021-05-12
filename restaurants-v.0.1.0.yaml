@@ -75,6 +75,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Restaurant'
+    post:
+      summary: Restaurant
+      operationId: addRestaurant
+      tags:
+        - Restaurant
+      requestBody:
+        description: Restaurant
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurant'  
+      responses:
+        '201':
+          description: Restaurant
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'                    
     put:
       summary: Restaurant
       operationId: addRestaurant
