@@ -1,4 +1,4 @@
-name: lambda build
+name: Lambda Build
 on: [push]
 jobs:
   deploy_source:
