@@ -1,0 +1,16 @@
+name: Contract Test
+on: [push]
+jobs:
+  deploy_source:
+    name: Run Contract Test
+    strategy:
+      matrix:
+        node-version: [12.x]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: matt-ball/newman-action@master
+      with:
+        postmanApiKey: ${{ secrets.postman_api_key }}
+        collection: 12959542-b0d9f34f-763e-47c8-902c-517850bb9697
+        environment: 12959542-071ce958-5a8f-4df6-bc5d-317d12fda332  
