@@ -1,0 +1,16 @@
+name: Security Test (OWASP)
+on: [push]
+jobs:
+  deploy_source:
+    name: Run OWASP Security Test
+    strategy:
+      matrix:
+        node-version: [12.x]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: matt-ball/newman-action@master
+      with:
+        postmanApiKey: ${{ secrets.postman_api_key }}
+        collection: 12959542-08c0598b-f138-4afb-8cfd-f4576dc2735c
+        environment: 12959542-071ce958-5a8f-4df6-bc5d-317d12fda332  
