@@ -2,7 +2,7 @@ name: Lambda Build
 on: [push]
 jobs:
   deploy_source:
-    name: build and deploy lambda1
+    name: Build and Deploy Lambda Files to AWS
     strategy:
       matrix:
         node-version: [12.x]
