@@ -1,0 +1,16 @@
+name: Performance Test
+on: [push]
+jobs:
+  deploy_source:
+    name: Run Performance Test
+    strategy:
+      matrix:
+        node-version: [12.x]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: matt-ball/newman-action@master
+      with:
+        postmanApiKey: ${{ secrets.postman_api_key }}
+        collection: 12959542-a4175c6d-ebec-40dc-8710-4be4b9c494b5
+        environment: 12959542-071ce958-5a8f-4df6-bc5d-317d12fda332  
