@@ -48,8 +48,8 @@ paths:
           required: true
           schema:
             type: string    
-        - name: restaurantId
-          in: path
+        - name: newProperty
+          in: query
           description: The unique id.
           required: true
           schema:
