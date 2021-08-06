@@ -47,7 +47,13 @@ paths:
           description: The unique id.
           required: true
           schema:
-            type: string        
+            type: string    
+        - name: restaurantId
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string                 
       tags:
         - Restaurant
       responses:
