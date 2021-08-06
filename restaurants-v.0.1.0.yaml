@@ -1,6 +1,338 @@
 openapi: 3.0.0
 info:
   version: v0.1.0
+  # An extension for OpenAPI
+  x-lifecycle:
+
+    # Navigating Change
+    version:
+        current: 'http://example.com/next'
+        next: 'http://example.com/next'
+        previous: 'http://example.com/next'
+
+    # Development
+    # Staging
+    # Production
+    environments: 
+
+        # Environment for development
+        - name: Development
+          url: 'https://www.postman.com/environment'  
+          variables:
+              base_url: 'http://example.com/development'       
+              api_key: 'xe3847d3J78393jkdm1123'  
+
+        # Environment for production
+        - name: Production
+          url: 'https://www.postman.com/environment'  
+          variables:
+              base_url: 'http://example.com/production'       
+              api_key: 'xe3847d3J78393jkdm1123'                
+
+    # Design
+    # Pre-Release    
+    # Active
+    # Recommended
+    # Retired
+    # Deprecated
+    maturity: 'Design'
+
+    # Public
+    # Internal
+    # Group
+    # Partner
+    visibility: 'Internal'
+
+    # Elements of the API Lifecycle
+    elements:
+
+        # All Mocks
+        mocks:
+
+            label: Mocking
+            elements:              
+
+                - type: sandbox
+                  title: Mock Server
+                  url: 'https://example.com/mock'
+                  collection: 'https://www.postman.com/collection'        
+
+        # Documentation
+        documentation:
+
+            label: Docs
+            guidance: http://example.com/guidance
+            elements:
+
+                # Reference Documentation
+                - type: reference
+                  title: Reference Documentation
+                  url: 'https://example.com/documentation'
+                  collection: 'https://www.postman.com/collection'
+
+                # Onboarding Documentation
+                - type: onboarding
+                  title: Onboarding Documentation
+                  url: 'https://example.com/documentation'
+                  collection: 'https://www.postman.com/collection'                  
+
+                # Workflow Documentation
+                - type: workflow
+                  title: Business Workflow Documentation
+                  url: 'https://example.com/documentation'
+                  collection: 'https://www.postman.com/collection'
+
+        # Deployment
+        deployment:
+
+            label: Publishing
+            guidance: http://example.com/guidance
+            elements:            
+
+                # GitHub Repository
+                - type: github
+                  title: Github Repository
+                  url: 'https://github.com/org/repo'
+                  sync: true
+
+                # Pipeline
+                - type: github-action
+                  title: Github Action
+                  url: 'https://github.com/org/repo/actions'       
+
+                # Gateway
+                - type: aws-api-gateway
+                  title: AWS API Gateway
+                  url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com'
+                  collection: 'https://www.postman.com/collection'              
+                  sync: true
+
+        # Management
+        management:
+
+            label: Manage
+            guidance: http://example.com/guidance
+            elements:     
+
+                # Onboarding
+                - type: onboarding
+                  title: Login / Registration
+                  url: 'https://example.com/login'                           
+
+                # Plan
+                - type: aws-api-gateway-plan
+                  title: Plan
+                  url: 'https://console.aws.amazon.com/apigateway/home?#/usage-plans/859pid'                              
+
+        # SDKs
+        sdks:
+
+            label: SDKs
+            guidance: http://example.com/guidance
+            elements:     
+
+                # Python
+                - type: python
+                  title: Python Library
+                  url: 'https://github.com/sdks/python'                           
+
+                # Node.js
+                - type: node.js
+                  title: Node.js Library
+                  url: 'https://github.com/sdks/nodejs'   
+
+                # Go
+                - type: go
+                  title: Go Library
+                  url: 'https://github.com/sdks/go'                        
+
+        # All Tests
+        tests:
+
+            label: Testing
+            guidance: http://example.com/guidance
+            elements:              
+
+                - type: contract
+                  title: Contract Testing
+                  url: 'https://example.com/contract-testing'
+                  collection: 'https://www.postman.com/collection'
+
+                - type: performance
+                  title: Performance Testing
+                  url: 'https://example.com/performance-testing'
+                  collection: 'https://www.postman.com/collection'
+
+                - type: security
+                  title: OWASP Top 10
+                  url: 'https://example.com/owasp-security-testing'
+                  collection: 'https://www.postman.com/collection'
+
+        # All Monitors
+        monitors:
+
+            label: Monitors
+            elements:              
+
+                - type: uptime
+                  title: Uptime Monitor
+                  url: 'https://example.com/monitor'
+                  collection: 'https://www.postman.com/collection'
+                  environment: 'https://www.postman.com/environment'
+
+                - type: security
+                  title: Recurring Security Testing Monitor
+                  url: 'https://example.com/monitor'
+                  collection: 'https://www.postman.com/collection'
+                  environment: 'https://www.postman.com/environment'
+
+                - type: contract
+                  title: Contract Testing Monitor
+                  url: 'https://example.com/monitor'
+                  collection: 'https://www.postman.com/collection'
+                  environment: 'https://www.postman.com/environment'                                    
+
+                - type: performance
+                  title: US East Regional Performance Testing Monitor
+                  url: 'https://example.com/monitor'
+                  collection: 'https://www.postman.com/collection'
+                  environment: 'https://www.postman.com/environment'
+
+                - type: performance
+                  title: US West Regional Performance Testing Monitor
+                  url: 'https://example.com/monitor'
+                  collection: 'https://www.postman.com/collection'
+                  environment: 'https://www.postman.com/environment'                  
+
+        # Observability
+        observability:
+
+            label: Observability
+            elements:              
+
+                - type: reports
+                  title: Report Dashboard
+                  url: 'https://example.com/reports' 
+
+                - type: change-log
+                  title: Change Log
+                  url: 'https://example.com/change-log'      
+
+                - type: activity
+                  title: Activity
+                  url: 'https://example.com/activity'     
+
+                - type: apm
+                  title: Datadog
+                  url: 'https://datadog.com/dashboard'   
+                  sync: true   
+
+                - type: aws-api-gateway
+                  title: Gateway Usage Report
+                  url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com/usage'  
+                  sync: true                    
+
+                - type: uptime
+                  title: Uptime Monitor Results
+                  url: 'https://example.com/monitor/results'
+
+                - type: security
+                  title: Recurring Security Testing Monitor Results
+                  url: 'https://example.com/monitor/results'
+
+                - type: contract
+                  title: Contract Testing Monitor Results
+                  url: 'https://example.com/monitor/results'                                   
+
+                - type: performance
+                  title: US East Regional Performance Testing Monitor Results
+                  url: 'https://example.com/monitor/results'
+
+                - type: performance
+                  title: US West Regional Performance Testing Monitor Results
+                  url: 'https://example.com/monitor/results'                                                
+
+        # Discovery
+        discovery:
+
+            label: Discovery
+            elements:              
+
+                - type: network
+                  title: Private Network
+                  url: 'https://example.com/private-network'    
+
+                - type: network
+                  title: Public Network
+                  url: 'https://example.com/public-network'                                  
+
+                - type: workspace
+                  title: Private Workspace
+                  url: 'https://example.com/private-workspace'                  
+
+                - type: workspace
+                  title: Public Workspace
+                  url: 'https://example.com/public-workspace'                 
+
+        # Governance
+        governance:
+
+            label: Governance
+            rules:              
+
+                - type: design-rules
+                  title: Design Rules
+                  url: 'https://example.com/design-rules'    
+
+                - type: management-rules
+                  title: Management Rules
+                  url: 'https://example.com/management-rules'                       
+
+                - type: documentation-rules
+                  title: Documentation Rules
+                  url: 'https://example.com/documentation-rules'   
+
+                - type: testing-rules
+                  title: Testing Rules
+                  url: 'https://example.com/testing-rules'                                                    
+
+    # Milestones for the API (Achieved and Target)
+    milestones:
+
+        # Design
+        - type: design
+          description: 'Design agreed upon by stakeholders.'
+          date: '2021-05-01'
+
+        # Design Review
+        - type: design-review
+          description: 'Went through design review.'
+          date: '2021-06-01'          
+
+        # Staging
+        - type: staging
+          description: 'Left staging phase of development.'
+          date: '2021-07-01'
+
+        # Security Review
+        - type: security-review
+          description: 'Went through security review.'
+          date: '2021-06-01'           
+
+        # Active
+        - type: active
+          description: 'Put into production as active API.'
+          date: '2021-07-15'   
+
+        # Retire
+        - type: retire
+          description: 'Planned retirement date.'
+          date: '2025-07-15'                            
+
+        # Deprecation
+        - type: deprecation
+          description: 'Planned deprecation date.'
+          date: '2025-12-15'   
   title: Restaurants
   description: 'This is the API for managing detail of the restaurants.'
 servers:
