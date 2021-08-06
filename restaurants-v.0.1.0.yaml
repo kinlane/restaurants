@@ -103,8 +103,7 @@ info:
                 # Gateway
                 - type: aws-api-gateway
                   title: AWS API Gateway
-                  url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com'
-                  collection: 'https://www.postman.com/collection'              
+                  url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com'            
                   sync: true
 
         # Management
