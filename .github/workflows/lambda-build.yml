@@ -22,7 +22,7 @@ jobs:
       - name: zip
         uses: kinlane/add-item@main
         with:
-          args: zip -qq -r ./bundle.zip ./
+          args: zip -qq -r bundle.zip "node_modules" "index.js"
       - name: default deploy
         uses: appleboy/lambda-action@master
         with:
